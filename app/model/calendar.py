@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime, date, time
 from email.policy import EmailPolicy
-from typing import ClassVar
+from typing import ClassVar, Dict, Optional
 
 from app.services.util import generate_unique_id, date_lower_than_today_error, event_not_found_error, \
     reminder_not_found_error, slot_not_available_err
@@ -52,6 +52,10 @@ class Event:
         )
 
 # TODO: Implement Day class here
+class Day:
 
+ def __init__(self, date_: date):
+    self.date_ = date_
+    self.slots: Dict[time, Optional[str]] = {}
 
 # TODO: Implement Calendar class here
